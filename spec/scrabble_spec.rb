@@ -1,15 +1,23 @@
 require('rspec')
 require('scrabble')
 
-describe('Word#scrabble') do
-  it("returns a scrabble score for a letter") do
-    expect("a".scrabble()).to(eq(1))
+describe('Word') do
+  describe('#scrabble') do
+    it("returns a scrabble score for a letter") do
+      word = WordGame.new("a")
+      expect(word.scrabble()).to(eq(1))
+    end
+
+    it("returns a score of 1 each for A, E, I, O, U, L, N, R, S, T") do
+      word = WordGame.new("l")
+      expect(word.scrabble()).to(eq(1))
+
+    end
+    
+
   end
 end
 
-# it("returns a score of 1 each for A, E, I, O, U, L, N, R, S, T") do
-#   expect("[a]".scrabble()).to(eq(1))
-# end
 #
 # it("returns a score of 2 each for D, G") do
 #   expect("[d]".scrabble()).to(eq(2))
