@@ -1,4 +1,5 @@
 require('rspec')
+require('pry')
 require('scrabble')
 
 describe('Word') do
@@ -8,12 +9,11 @@ describe('Word') do
       expect(word.scrabble()).to(eq(1))
     end
 
-    it("returns a score of 1 each for A, E, I, O, U, L, N, R, S, T") do
-      word = WordGame.new("l")
-      expect(word.scrabble()).to(eq(1))
+    it("returns a score for multi-letter word") do
+      word = WordGame.new("query")
+      expect(word.scrabble()).to(eq(17))
 
     end
-    
 
   end
 end
